@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#8e0b22">
+<title>Gaurav &amp; Aliza | Ring Ceremony Invitation</title>
+<meta name="description" content="You're cordially invited to the ring ceremony of Aliza Rautia and Gourav Rohidas on 18 December 2026 at Rautia Palace.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- Reusable SVG symbols -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="flower" viewBox="0 0 100 100">
+      <g fill="currentColor">
+        <ellipse cx="50" cy="24" rx="15" ry="22"/>
+        <ellipse cx="50" cy="24" rx="15" ry="22" transform="rotate(72 50 50)"/>
+        <ellipse cx="50" cy="24" rx="15" ry="22" transform="rotate(144 50 50)"/>
+        <ellipse cx="50" cy="24" rx="15" ry="22" transform="rotate(216 50 50)"/>
+        <ellipse cx="50" cy="24" rx="15" ry="22" transform="rotate(288 50 50)"/>
+      </g>
+      <circle cx="50" cy="50" r="10" fill="#fff3f6"/>
+    </symbol>
+    <symbol id="heart" viewBox="0 0 24 24">
+      <path fill="currentColor" d="M12 21s-7.5-4.6-9.6-9.2C.8 8.2 3 4.5 6.6 4.5c2 0 3.5 1 5.4 3 1.9-2 3.4-3 5.4-3 3.6 0 5.8 3.7 4.2 7.3C19.500 16.400 12 21 12 21z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- Red velvet curtain opening -->
+<div class="curtains" id="curtains">
+  <div class="curtain curtain-l"></div>
+  <div class="curtain curtain-r"></div>
+  <div class="curtain-copy">
+    <p class="c-invite">You're Cordially Invited to Our Ring Ceremony</p>
+    <p class="c-names">Gaurav &amp; Aliza</p>
+    <p class="c-tag">A Celebration of Love</p>
+    <p class="c-sub">A Beautiful Celebration Awaits You</p>
+
+    <button class="ribbon" id="ribbon" type="button" aria-label="Untie the ribbon to open the invitation">
+      <svg viewBox="0 0 220 200" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="satin" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#ffd0e0"/>
+            <stop offset=".5" stop-color="#f77fa6"/>
+            <stop offset="1" stop-color="#e0487f"/>
+          </linearGradient>
+        </defs>
+        <rect class="band" x="0" y="72" width="220" height="32" rx="4" fill="url(#satin)"/>
+        <path class="tail tail-l" d="M104 94 L66 192 L90 178 L100 198 L118 102Z" fill="url(#satin)"/>
+        <path class="tail tail-r" d="M116 94 L154 192 L130 178 L120 198 L102 102Z" fill="url(#satin)"/>
+        <path class="loop loop-l" d="M110 88 C58 24 14 70 58 100 C80 110 100 98 110 88Z" fill="url(#satin)"/>
+        <path class="loop loop-r" d="M110 88 C162 24 206 70 162 100 C140 110 120 98 110 88Z" fill="url(#satin)"/>
+        <path class="shine" d="M100 84 C70 52 44 70 62 90 M120 84 C150 52 176 70 158 90" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="3" stroke-linecap="round"/>
+        <ellipse class="knot" cx="110" cy="90" rx="16" ry="14" fill="#e0487f"/>
+      </svg>
+    </button>
+    <p class="c-hint">Untie the ribbon to reveal the magic...</p>
+    <p class="c-tap">Tap to Reveal</p>
+  </div>
+</div>
+
+<!-- Falling hearts and petals -->
+<div class="fx-layer ambient" id="ambient" aria-hidden="true"></div>
+<div class="fx-layer burst" id="burst" aria-hidden="true"></div>
+
+<!-- Music control -->
+<button class="music-btn" id="musicBtn" type="button" aria-pressed="false" aria-label="Play background music" hidden>
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path fill="currentColor" d="M9 3v11.3A3.5 3.5 0 1 0 11 17.500V8h6V3H9z"/>
+    <line class="mute-line" x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+  </svg>
+</button>
+<audio id="bgm" src="music.mpeg" loop preload="none"></audio>
+
+<main id="main" tabindex="-1" inert>
+
+  <!-- Invitation cover -->
+  <header class="section hero" id="top">
+    <svg class="deco d-tl" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="deco d-tr" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="deco d-bl" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="deco d-br" aria-hidden="true"><use href="#flower"/></svg>
+    <p class="hero-line" style="--d:.2s">You're cordially invited to our</p>
+    <p class="hero-kind" style="--d:.5s">Ring Ceremony</p>
+    <h1 class="hero-names" style="--d:.8s">Gaurav <span class="amp">&amp;</span> Aliza</h1>
+    <p class="hero-tag" style="--d:1.2s">A Celebration of Love</p>
+    <p class="hero-tag" style="--d:1.2s"><br>Scroll To See ⬇</p>
+    <!--<p class="hero-date" style="--d:1.5s">Friday, 18 December 2026</p>-->
+    <a class="scroll-cue" href="#welcome" aria-label="Scroll to the welcome message"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#heart"/></svg></a>
+  </header>
+
+  <!-- Welcome -->
+  <section class="section" id="welcome" aria-labelledby="welcome-h">
+    <div class="panel reveal">
+      <svg class="deco d-panel-l" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco d-panel-r" aria-hidden="true"><use href="#flower"/></svg>
+      <h2 class="script" id="welcome-h">Welcome</h2>
+      <p>Two hearts, one beautiful promise, and a lifetime of togetherness. With immense joy and the blessings of our families, we invite you to celebrate the beginning of our forever.</p>
+    </div>
+  </section>
+
+  <!-- Couple introduction -->
+  <section class="section couple" id="couple" aria-labelledby="couple-h">
+    <h2 class="sr-only" id="couple-h">The couple</h2>
+    <p class="name script reveal">Gaurav Rohidas</p>
+    <p class="and script reveal">&amp;</p>
+    <p class="name script reveal">Aliza Rautia</p>
+    <div class="frame reveal">
+      <svg class="deco f1" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco f2" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco f3" aria-hidden="true"><use href="#flower"/></svg>
+      <svg class="deco f4" aria-hidden="true"><use href="#flower"/></svg>
+      <div class="frame-photo">
+        <img src="couple.jpeg" alt="Gaurav and Aliza together" width="1186" height="1086" loading="lazy" onerror="this.onerror=null;this.src='assets/couple-placeholder.svg'">
+      </div>
+      <span class="fh h1"></span><span class="fh h2"></span><span class="fh h3"></span><span class="fh h4"></span><span class="fh h5"></span>
+    </div>
+  </section>
+
+  <!-- Save the date -->
+  <section class="section" id="date" aria-labelledby="date-h">
+    <h2 class="script reveal" id="date-h">Save the Date</h2>
+    <div class="date-card reveal" id="dateCard" role="button" tabindex="0" aria-label="Tap to scratch the card and reveal the live countdown">
+      <p class="dc-date">18 DECEMBER 2026</p>
+      <p class="dc-day">FRIDAY</p>
+      <p class="dc-time">12:00 PM</p>
+      <div class="scratch" id="scratch">
+        <div class="countdown" id="countdown" role="timer" aria-live="off">
+          <div class="cd"><b id="cdD">00</b><span>Days</span></div>
+          <div class="cd"><b id="cdH">00</b><span>Hours</span></div>
+          <div class="cd"><b id="cdM">00</b><span>Minutes</span></div>
+          <div class="cd"><b id="cdS">00</b><span>Seconds</span></div>
+        </div>
+        <p class="celebrate" id="celebrate" hidden>Today is the day! Let the celebration begin ❤️</p>
+        <canvas id="foil" aria-hidden="true"></canvas>
+      </div>
+    </div>
+  </section>
+
+  <!-- Venue -->
+  <section class="section" id="venue" aria-labelledby="venue-h">
+    <div class="panel reveal">
+      <h2 class="script" id="venue-h">The Venue</h2>
+      <p class="venue-name">RAUTIA PALACE</p>
+      <address>6876+3XQ, Petupali, Shohela,<br>Odisha 768034</address>
+      <p class="venue-when">18 December 2026 | 12:00 PM</p>
+      <a class="btn" href="https://www.google.com/maps/dir/?api=1&amp;destination=6876%2B3XQ%2C%20Petupali%2C%20Shohela%2C%20Odisha%20768034" target="_blank" rel="noopener noreferrer">GET DIRECTIONS</a>
+    </div>
+  </section>
+
+  <!-- Animated couple -->
+  <section class="section together" id="together" aria-label="Gaurav and Aliza">
+    <svg class="deco t1" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="deco t2" aria-hidden="true"><use href="#flower"/></svg>
+    <div class="oval reveal">
+      <img src="couple1.jpeg" alt="Aliza and Gaurav, engagement portrait" width="1186" height="1086" loading="lazy" onerror="this.onerror=null;this.src='assets/couple-placeholder.svg'">
+    </div>
+    <span class="fh t-h1"></span><span class="fh t-h2"></span><span class="fh t-h3"></span><span class="fh t-h4"></span>
+  </section>
+
+  <!-- Thank you -->
+  <footer class="section thanks" id="thanks">
+    <svg class="deco th1" aria-hidden="true"><use href="#flower"/></svg>
+    <svg class="deco th2" aria-hidden="true"><use href="#flower"/></svg>
+    <h2 class="visit reveal">DON'T FORGET TO VISIT!</h2>
+    <p class="reveal">Your presence and blessings will make our special day even more memorable. We look forward to celebrating this beautiful occasion with you.</p>
+    <p class="thank script reveal">Thank You! <span class="beat" aria-hidden="true">❤️</span></p>
+    <p class="with-love reveal">With Love, Gaurav &amp; Aliza</p>
+    <p class="credit">Created By: Lukesh Rautia
+      <br>Info: lukesh97125@gmail.com</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
